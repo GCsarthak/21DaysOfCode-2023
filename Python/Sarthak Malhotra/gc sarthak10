@@ -1,0 +1,13 @@
+students = [('Alice', 80), ('Bob', 90), ('Charlie', 75)]
+
+for student, marks in students:
+    print(f"{student}: {marks}")
+
+
+
+
+students = [('Alice', 80, 90, 75), ('Bob', 85, 95, 92), ('Charlie', 78, 85, 80)]
+
+for student, *grades in students:
+    average_grade = round(sum(grades) / len(grades), 2)
+    print(f"{student}: {average_grade}")
