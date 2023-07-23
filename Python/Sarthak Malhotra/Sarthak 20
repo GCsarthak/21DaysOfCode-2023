@@ -1,0 +1,66 @@
+def bubble_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        # Set a flag to check if any swaps occur in this iteration
+        swapped = False
+
+        # Last i elements are already sorted, so we don't need to check them
+        for j in range(0, n - i - 1):
+            # Swap if the element found is greater than the next element
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+
+        # If no two elements were swapped in this pass, the list is already sorted
+        if not swapped:
+            break
+
+    return arr
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted list in ascending order using Bubble Sort:", sorted_numbers)
+
+
+
+
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left_half = arr[:mid]
+    right_half = arr[mid:]
+
+    left_half = merge_sort(left_half)
+    right_half = merge_sort(right_half)
+
+    return merge(left_half, right_half)
+
+
+def merge(left, right):
+    merged_list = []
+    left_index, right_index = 0, 0
+
+    # Merge elements in descending order
+    while left_index < len(left) and right_index < len(right):
+        if left[left_index] > right[right_index]:
+            merged_list.append(left[left_index])
+            left_index += 1
+        else:
+            merged_list.append(right[right_index])
+            right_index += 1
+
+    # Add any remaining elements from the left and right lists
+    merged_list.extend(left[left_index:])
+    merged_list.extend(right[right_index:])
+
+    return merged_list
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = merge_sort(numbers)
+print("Sorted list in descending order using Merge Sort:", sorted_numbers)
+
