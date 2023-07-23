@@ -1,0 +1,60 @@
+def fizzbuzz_range(start, end):
+    result = []
+    for num in range(start, end + 1):
+        if num % 3 == 0 and num % 5 == 0:
+            result.append("FizzBuzz")
+        elif num % 3 == 0:
+            result.append("Fizz")
+        elif num % 5 == 0:
+            result.append("Buzz")
+        else:
+            result.append(str(num))
+    return result
+
+
+
+
+# Test the fizzbuzz_range function
+start_num = 1
+end_num = 15
+result_list = fizzbuzz_range(start_num, end_num)
+print(result_list)
+
+# Test the are_anagrams function
+string1 = "listen"
+string2 = "silent"
+print(are_anagrams(string1, string2))  # Output: True
+
+string3 = "Astronomer"
+string4 = "Moon starer"
+print(are_anagrams(string3, string4))  # Output: True
+
+string5 = "hello"
+string6 = "world"
+print(are_anagrams(string5, string6))  # Output: False
+
+
+
+
+
+
+
+
+# Test the fizzbuzz_range function
+start_num = 1
+end_num = 15
+result_list = fizzbuzz_range(start_num, end_num)
+print(result_list)
+
+# Test the are_anagrams function
+string1 = "listen"
+string2 = "silent"
+print(are_anagrams(string1, string2))  # Output: True
+
+string3 = "Astronomer"
+string4 = "Moon starer"
+print(are_anagrams(string3, string4))  # Output: True
+
+string5 = "hello"
+string6 = "world"
+print(are_anagrams(string5, string6))  # Output: False
